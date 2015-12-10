@@ -36,7 +36,7 @@ class allForYou(scrapy.Spider):
 			self.ctr+=1
 			print response
 			item['crawl_time'] = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-			item['urls'] = sel.xpath("@data-imgurl").extract()	
+			item['urls'] = response.url	
 			item['image'] = sel.xpath("@data-imgurl").extract()		
 			item['out_of_stock'] = sel.xpath("@data-outofstock").extract()
 			item['title'] = sel.xpath("@data-name").extract()
